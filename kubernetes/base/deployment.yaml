@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-store
+spec:
+  selector:
+    matchLabels:
+      app: api-store
+  template:
+    metadata:
+      labels:
+        app: api-store
+    spec:
+      containers:
+      - name: api-store
+        image: bartodes/app-store-bootcamp:1.0.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 3000
