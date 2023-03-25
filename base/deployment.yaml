@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: api-store
-        image: bartodes/app-store-bootcamp:1.0.0
+        image: :1
         resources:
           limits:
             memory: "128Mi"
