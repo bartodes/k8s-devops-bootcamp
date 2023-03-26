@@ -8,7 +8,7 @@ spec:
   source:
     repoURL:  https://github.com/bartodes/kubernetes-devops-bootcamp.git
     targetRevision: HEAD
-    path: environment/dev
+    path: base/
   destination:
     server: https://kubernetes.default.svc
     namespace: dev-app
