@@ -7,8 +7,8 @@ spec:
   project: default
   source:
     repoURL:  https://github.com/bartodes/kubernetes-devops-bootcamp.git
-    targetRevision: HEAD:k8s-kustomize
-    path: kubernetes/base
+    targetRevision: HEAD
+    path: ./
   destination:
     server: https://kubernetes.default.svc
     namespace: dev-app
