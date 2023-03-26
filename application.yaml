@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL:  https://github.com/bartodes/kubernetes-devops-bootcamp.git
-    targetRevision: HEAD
+    targetRevision: HEAD:k8s-kustomize
     path: kubernetes/base
   destination:
     server: https://kubernetes.default.svc
@@ -19,48 +19,48 @@ spec:
       selfHeal: true
       prune: true
 
----
+# ---
 
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: staging-api-store
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL:  https://github.com/bartodes/kubernetes-devops-bootcamp.git
-    targetRevision: HEAD
-    path: kubernetes/base
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: staging-app
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
-    automated:
-      selfHeal: true
-      prune: true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: staging-api-store
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL:  https://github.com/bartodes/kubernetes-devops-bootcamp.git
+#     targetRevision: HEAD
+#     path: kubernetes/base
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: staging-app
+#   syncPolicy:
+#     syncOptions:
+#       - CreateNamespace=true
+#     automated:
+#       selfHeal: true
+#       prune: true
 
----
+# ---
 
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: prod-api-store
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL:  https://github.com/bartodes/kubernetes-devops-bootcamp.git
-    targetRevision: HEAD
-    path: kubernetes/base
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: prod-app
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
-    automated:
-      selfHeal: true
-      prune: true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: prod-api-store
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL:  https://github.com/bartodes/kubernetes-devops-bootcamp.git
+#     targetRevision: HEAD
+#     path: kubernetes/base
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: prod-app
+#   syncPolicy:
+#     syncOptions:
+#       - CreateNamespace=true
+#     automated:
+#       selfHeal: true
+#       prune: true
