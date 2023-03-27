@@ -1,70 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dev-api-store
-  namespace: argocd
+  name: dev-test2
 spec:
-  project: default
-  source:
-    repoURL:  https://github.com/bartodes/kubernetes-devops-bootcamp.git
-    targetRevision: HEAD
-    path: ./
-    kustomize:
-      overlays:
-        - path: environments/dev
-          name: dev
   destination:
-    server: https://kubernetes.default.svc
-    namespace: dev-app
+    namespace: dev-api
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: environmets/dev
+    repoURL: 'https://github.com/bartodes/k8s-devops-bootcamp.git'
+    targetRevision: HEAD
+  project: default
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true
-    automated:
-      selfHeal: true
-      prune: true
-
-# ---
-
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: staging-api-store
-#   namespace: argocd
-# spec:
-#   project: default
-#   source:
-#     repoURL:  https://github.com/bartodes/kubernetes-devops-bootcamp.git
-#     targetRevision: HEAD
-#     path: kubernetes/base
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: staging-app
-#   syncPolicy:
-#     syncOptions:
-#       - CreateNamespace=true
-#     automated:
-#       selfHeal: true
-#       prune: true
-
-# ---
-
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: prod-api-store
-#   namespace: argocd
-# spec:
-#   project: default
-#   source:
-#     repoURL:  https://github.com/bartodes/kubernetes-devops-bootcamp.git
-#     targetRevision: HEAD
-#     path: kubernetes/base
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: prod-app
-#   syncPolicy:
-#     syncOptions:
-#       - CreateNamespace=true
-#     automated:
-#       selfHeal: true
-#       prune: true
+    - CreateNamespace=true
+    # automated:
+    #   prune: true
+    #   selfHeal: true
