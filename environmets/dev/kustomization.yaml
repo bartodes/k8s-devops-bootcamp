@@ -11,6 +11,6 @@ namePrefix: dev-
 commonLabels:
   app: dev-api-store
 
-# replicas:
-#   - name: dev-api-deployment
-#     count: 1
+replicas:
+  - name: dev-api-deployment
+    count: 4
