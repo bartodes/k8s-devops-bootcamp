@@ -1,7 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dev-test2
+  name: dev-app
+  namespace: argocd
 spec:
   destination:
     namespace: dev-api
@@ -13,7 +14,53 @@ spec:
   project: default
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
-    # automated:
-    #   prune: true
-    #   selfHeal: true
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: staging-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: staging-api
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: environmets/staging
+    repoURL: 'https://github.com/bartodes/k8s-devops-bootcamp.git'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: prod-api
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: environmets/prod
+    repoURL: 'https://github.com/bartodes/k8s-devops-bootcamp.git'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
