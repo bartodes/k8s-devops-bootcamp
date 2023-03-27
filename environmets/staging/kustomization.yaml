@@ -4,13 +4,13 @@ kind: Kustomization
 bases:
   - ../../base
 
-namespace: prod-api
+namespace: staging-api
 
-namePrefix: prod-
+namePrefix: staging-
 
 commonLabels:
-  app: prod-api-store
+  app: staging-api-store
 
 replicas:
-  - name: prod-api-deployment
+  - name: staging-api-deployment
     count: 1
