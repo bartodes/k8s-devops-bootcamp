@@ -14,3 +14,7 @@ commonLabels:
 replicas:
   - name: prod-api-deployment
     count: 1
+
+images:
+  - name: kustomize_image
+    newName: bartodes/api-store:1.0.1
