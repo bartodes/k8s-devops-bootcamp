@@ -8,7 +8,7 @@ spec:
     namespace: dev-api
     server: 'https://kubernetes.default.svc'
   source:
-    path: environmets/dev
+    path: environments/dev
     repoURL: 'https://github.com/bartodes/k8s-devops-bootcamp.git'
     targetRevision: HEAD
   project: default
@@ -31,7 +31,7 @@ spec:
     namespace: staging-api
     server: 'https://kubernetes.default.svc'
   source:
-    path: environmets/staging
+    path: environments/staging
     repoURL: 'https://github.com/bartodes/k8s-devops-bootcamp.git'
     targetRevision: HEAD
   project: default
@@ -54,7 +54,7 @@ spec:
     namespace: prod-api
     server: 'https://kubernetes.default.svc'
   source:
-    path: environmets/prod
+    path: environments/prod
     repoURL: 'https://github.com/bartodes/k8s-devops-bootcamp.git'
     targetRevision: HEAD
   project: default
