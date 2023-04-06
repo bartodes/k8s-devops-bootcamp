@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongo-config
+data:
+  mongo.properties: |
+    mongo.host=mongodb-service
+    mongo.database=my-database
+    mongo.username=mongo
+    mongo.password=password123
+    
+## Ejecutar el ConfigMap kubectl apply -f configmap.yaml
