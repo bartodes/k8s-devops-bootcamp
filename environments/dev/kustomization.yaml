@@ -8,8 +8,8 @@ namespace: dev-api
 
 namePrefix: dev-
 
-# commonLabels:
-#   app: dev-api-store
+commonLabels:
+  app: dev-api-store
 
 replicas:
   - name: dev-api-deployment
