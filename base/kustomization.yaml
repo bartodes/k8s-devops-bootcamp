@@ -4,3 +4,6 @@ kind: Kustomization
 resources:
   - app-deployment.yaml
   - app-service.yaml
+  - mongo-db.yaml
+  - mongo-db-configmap.yaml
+  - mongo-db-secret.yaml
