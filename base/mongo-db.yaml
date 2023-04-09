@@ -24,7 +24,7 @@ spec:
           ports:
             - containerPort: 27017
           volumeMounts:
-            - name: mongodb-persistent-storage
+            - name: mongodb-storage
               mountPath: /data/db
           env:
             - name: MONGO_INITDB_ROOT_USERNAME
@@ -38,7 +38,7 @@ spec:
                   name: mongodb-secret
                   key: mongo-password
       volumes:
-        - name: mongodb-persistent-storage
+        - name: mongodb-storage
           persistentVolumeClaim:
             claimName: mongodb-pvc
 ---
@@ -53,3 +53,15 @@ spec:
     - name: mongo-port
       port: 27017
       targetPort: 27017
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongodb-pvc
+spec:
+  resources:
+    requests:
+      storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
