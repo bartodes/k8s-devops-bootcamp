@@ -8,9 +8,6 @@ namespace: prod-api
 
 namePrefix: prod-
 
-commonLabels:
-  app: prod-api-store
-
 replicas:
   - name: prod-api-deployment
     count: 1
