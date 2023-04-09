@@ -8,9 +8,6 @@ namespace: staging-api
 
 namePrefix: staging-
 
-commonLabels:
-  app: staging-api-store
-
 replicas:
   - name: staging-api-deployment
     count: 1
