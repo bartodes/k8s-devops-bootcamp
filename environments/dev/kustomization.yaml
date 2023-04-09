@@ -8,9 +8,6 @@ namespace: dev-api
 
 namePrefix: dev-
 
-#commonLabels:
-#  app: dev-api-store
-
 replicas:
   - name: dev-api-deployment
     count: 1
