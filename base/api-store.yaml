@@ -5,11 +5,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: kustomize
+      app: api-store
   template:
     metadata:
       labels:
-        app: kustomize
+        app: api-store
     spec:
       containers:
       - name: api-store
