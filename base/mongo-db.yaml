@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  #namespace: kustomize
+  namespace: kustomize
   name: mongodb-deployment
   labels:
     app: mongodb
@@ -46,7 +46,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  #namespace: kustomize
+  namespace: kustomize
   name: mongodb-service
 spec:
   selector:
@@ -59,7 +59,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  #namespace: kustomize
+  namespace: kustomize
   name: mongodb-pvc
 spec:
   resources:
