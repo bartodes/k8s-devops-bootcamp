@@ -9,7 +9,7 @@ namespace: dev-api
 # namePrefix: dev-
 
 replicas:
-  - name: dev-api-deployment
+  - name: api-deployment
     count: 1
 
 images:
