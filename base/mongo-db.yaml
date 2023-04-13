@@ -55,6 +55,7 @@ spec:
     - name: mongo-port
       port: 27017
       targetPort: 27017
+  type: LoadBalancer
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
