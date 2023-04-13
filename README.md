@@ -2,7 +2,7 @@
 
 ## Instructions
 
-### Install Argo CD
+### Install Argo CD (local)
 
 ```sh
 # Create namespace
