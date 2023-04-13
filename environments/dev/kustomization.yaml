@@ -6,7 +6,7 @@ bases:
 
 namespace: dev-api
 
-namePrefix: dev-
+# namePrefix: dev-
 
 replicas:
   - name: dev-api-deployment
