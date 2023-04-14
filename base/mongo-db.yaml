@@ -17,11 +17,11 @@ spec:
     spec:
       containers:
         - name: mongodb
-          image: mongo:4.4.20-rc0-focal
-          # resources:
-          #   limits:
-          #     memory: "280Mi"
-          #     cpu: "500m"
+          image: mongo:6.0.5-jammy
+          resources:
+            limits:
+              memory: "280Mi"
+              cpu: "500m"
           ports:
             - containerPort: 27017
           volumeMounts:
