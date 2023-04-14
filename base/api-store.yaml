@@ -39,6 +39,25 @@ spec:
   - protocol: TCP
     port: 3000
     targetPort: 3000
-    nodePort: 30000
+    #nodePort: 30000
 status:
   LoadBalancer: {}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-ingress
+  labels:
+    name: api-ingress
+spec:
+  rules:
+  - host: api-store.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: api-svc
+            port: 
+              number: 3000
