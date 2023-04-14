@@ -51,7 +51,7 @@ metadata:
     name: api-ingress
 spec:
   rules:
-  - host: api-store.com
+  - host: api-store-devops.com
     http:
       paths:
       - pathType: Prefix
