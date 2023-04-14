@@ -23,7 +23,7 @@ spec:
         env:
           - name: DB_URI
             valueFrom:
-              mapKeyRef:
+              configMapKeyRef:
                 name: mongodb-config 
                 key: database_url
 ---
