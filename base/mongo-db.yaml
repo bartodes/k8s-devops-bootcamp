@@ -68,3 +68,22 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mongodb-ingress
+  labels:
+    name: mongodb-ingress
+spec:
+  rules:
+  - host: mongodb-service
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: mongodb-service
+            port: 
+              number: 27017
