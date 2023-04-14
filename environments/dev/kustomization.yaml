@@ -14,4 +14,4 @@ replicas:
 
 images:
   - name: kustomize_image
-    newName: bartodes/api-store:0.0.39
+    newName: bartodes/api-store:0.0.40
