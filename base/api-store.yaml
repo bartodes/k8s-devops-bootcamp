@@ -20,12 +20,12 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 3000
-      env:
-        - name: DB_URI
-          valueFrom:
-            mapKeyRef:
-              name: mongodb-config 
-              key: database_url
+        env:
+          - name: DB_URI
+            valueFrom:
+              mapKeyRef:
+                name: mongodb-config 
+                key: database_url
 ---
 apiVersion: v1
 kind: Service
