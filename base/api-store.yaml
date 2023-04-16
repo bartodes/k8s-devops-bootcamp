@@ -63,5 +63,7 @@ spec:
       - pathType: Prefix
         path: "/"
         backend:
-          serviceName: api-service
-          servicePort: 3000
+          service:
+            name: api-service
+            port: 
+              number: 3000
