@@ -21,6 +21,16 @@ spec:
         ports:
           - containerPort: 3000
         env:
+          - name: MONGO_USR
+            valueFrom:
+              secretKeyRef:
+                name: mongodb-secret
+                key: mongo-username
+          - name: MONGO_PSSWD
+            valueFrom:
+              secretKeyRef:
+                name: mongodb-secret
+                key: mongo-password
           - name: DB_URI
             valueFrom:
               configMapKeyRef:
@@ -30,18 +40,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: api-svc
+  name: api-service
 spec:
-  type: LoadBalancer
   selector:
     app: api-store
   ports:
   - protocol: TCP
     port: 3000
     targetPort: 3000
-    #nodePort: 30000
-status:
-  LoadBalancer: {}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -57,7 +63,5 @@ spec:
       - pathType: Prefix
         path: "/"
         backend:
-          service:
-            name: api-svc
-            port: 
-              number: 3000
+          serviceName: api-service
+          servicePort: 3000
